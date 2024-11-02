@@ -46,10 +46,12 @@
 	if(target.sexcon.check_active_ejaculation())
 		if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 			target.visible_message(span_lovebold("[target] cums onto [user]'s hair and face!"))
+			target.sexcon.set_target(user)
 			target.sexcon.cum_onto()
 		else
 			target.visible_message(span_lovebold("[target] cums into [user]'s mouth!"))
-			target.sexcon.cum_into()
+			target.sexcon.set_target(user)
+			target.sexcon.cum_into(TRUE)
 
 /datum/sex_action/blowjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	..()

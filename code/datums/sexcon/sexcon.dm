@@ -194,8 +194,10 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE)
 	log_combat(user, target, "Came inside the target")
+	target.reagents.add_reagent(/datum/reagent/erpjuice/cum, 3)
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
+		to_chat(target, span_info("I can taste something salty and tangy.")) //The actual taste proc wants a whole container, so we'll just do it this way.
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
@@ -430,14 +432,22 @@
 		return
 	last_pain = world.time
 	if(pain_amt >= PAIN_HIGH_EFFECT)
-		var/pain_msg = pick(list("IT HURTS!!!", "IT NEEDS TO STOP!!!", "I CAN'T TAKE IT ANYMORE!!!"))
-		to_chat(user, span_boldwarning(pain_msg))
+		if(!user.has_flaw(/datum/charflaw/masochist))
+			var/pain_msg = pick(list("IT HURTS!!!", "IT NEEDS TO STOP!!!", "I CAN'T TAKE IT ANYMORE!!!"))
+			to_chat(user, span_boldwarning(pain_msg))
+		else
+			var/pain_msg = pick(list("IT HURTS SO GOOD!!!", "DON'T STOP!!!", "THE PAIN! GIVE ME MORE!!!"))
+			to_chat(user, span_lovebold(pain_msg))
 		user.flash_fullscreen("redflash2")
 		if(prob(70) && user.stat == CONSCIOUS)
 			user.visible_message(span_warning("[user] shudders in pain!"))
 	else if(pain_amt >= PAIN_MED_EFFECT)
-		var/pain_msg = pick(list("It hurts!", "It pains me!"))
-		to_chat(user, span_boldwarning(pain_msg))
+		if(!user.has_flaw(/datum/charflaw/masochist))
+			var/pain_msg = pick(list("It hurts!", "It pains me!"))
+			to_chat(user, span_boldwarning(pain_msg))
+		else
+			var/pain_msg = pick(list("It hurts! I love it.", "I love the pain!"))
+			to_chat(user, span_lovebold(pain_msg))
 		user.flash_fullscreen("redflash1")
 		if(prob(40) && user.stat == CONSCIOUS)
 			user.visible_message(span_warning("[user] shudders in pain!"))
