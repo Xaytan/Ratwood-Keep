@@ -297,8 +297,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Alchemist"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/mason
-	name = "Mason"
+/obj/effect/landmark/start/artificer
+	name = "Artificer"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/scribe
@@ -312,6 +312,24 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/beastmonger
 	name = "Butcher"
 	icon_state = "arrow"
+
+/obj/effect/landmark/start/dguard
+	name = "Clinic Guard"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/doctor
+	name = "Clinic Physician"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/dguardlate
+	name = "Clinic Guard"
+	icon_state = "arrow"
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/doctorlate
+	name = "Clinic Physician"
+	icon_state = "arrow"
+	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/cook
 	name = "Cook"
