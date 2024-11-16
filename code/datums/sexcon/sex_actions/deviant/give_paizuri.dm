@@ -25,7 +25,7 @@
 
 /datum/sex_action/give_paizuri/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	..()
-	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
+	if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] starts rubbing [user.p_their()] body against [target]'s cock!"))
 	else
 		user.visible_message(span_warning("[user] guides [target]'s cock into [user.p_their()] cleavage and squishes it between [user.p_their()] tits!"))
