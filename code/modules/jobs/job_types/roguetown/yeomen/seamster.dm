@@ -24,7 +24,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	beltr = /obj/item/rogueweapon/huntingknife/scissors
-	beltl = /obj/item/roguekey/seamster
+	beltl = /obj/item/key/seamster
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle = 1)
 	if(H.gender == MALE) // We're givign males male specific clothes so they don't walk around in a dress
@@ -40,7 +40,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/treatment, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
 		H.change_stat("intelligence", 2)

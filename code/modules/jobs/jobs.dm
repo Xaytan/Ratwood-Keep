@@ -79,8 +79,8 @@ GLOBAL_LIST_INIT(courtier_positions, list(
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"Watchman",
-	"Bog Guard",
-	"Bog Master",
+	"Vanguard",
+	"Warden",
 	"Man at Arms",
 	"Dungeoneer",
 	"Gatemaster",
@@ -105,11 +105,9 @@ GLOBAL_LIST_INIT(yeoman_positions, list(
 	"Guild Smith",
 	"Seamster",
 	"Alchemist",
-	"Artificier",
+	"Artificer",
 	"Scribe",
 	"Village Elder",
-	"Clinic Physician",
-	"Clinic Guard",
 ))
 
 GLOBAL_LIST_INIT(peasant_positions, list(
